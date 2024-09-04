@@ -21,8 +21,12 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => false,
             'rules' => [
-                '<controller:\w+>/<action:\w+>/site/login' => '/login',
+                '/backend' => 'site/index',
+                'login' => 'site/login',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
             ],
         ],
         'user' => [
